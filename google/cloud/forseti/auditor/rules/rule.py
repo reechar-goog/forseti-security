@@ -26,6 +26,8 @@ from google.cloud.forseti.services.auditor import storage
 from google.cloud.forseti.services.actions import action_engine_pb2
 from google.cloud.forseti.common.util import class_loader_util
 from google.cloud.forseti.common.util import log_util
+from rule_errors import ResourceDataError
+
 
 LOGGER = log_util.get_logger(__name__)
 
@@ -174,35 +176,3 @@ class Rule(object):
         """
         return '%s.%s' % (self.__module__, self.__class__.__name__)
 
-
-class Error(Exception):
-    """Base Error class."""
-
-class AuditError(Error):
-    """AuditError."""
-
-
-class InvalidRuleTypeError(AuditError):
-    """InvalidRuleTypeError."""
-
-    def __init__(self, rule_type):
-        """Init.
-
-        Args:
-            rule_type (str): The rule type.
-        """
-        super(InvalidRuleTypeError, self).__init__(
-            'Invalid rule type: {}'.format(rule_type))
-
-
-class ResourceDataError(AuditError):
-    """ResourceDataError."""
-
-    def __init__(self, resource_data):
-        """Init.
-
-        Args:
-            resource_data (str): The resource data.
-        """
-        super(ResourceDataError, self).__init__(
-            'Resource data could not be audited: {}'.format(resource_data))
