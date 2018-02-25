@@ -37,7 +37,7 @@ resources:
     # GCE instance properties
     image-project: ubuntu-os-cloud
     image-family: ubuntu-1604-lts
-    instance-type: n1-standard-2
+    instance-type: g1-small
     zone: {FORSETI_SERVER_ZONE}
 
     service-account: {GCP_CLIENT_SERVICE_ACCOUNT}

@@ -37,11 +37,13 @@ resources:
 # GCE instance properties
     image-project: ubuntu-os-cloud
     image-family: ubuntu-1604-lts
-    instance-type: n1-standard-2
+    instance-type: g1-small
+    zone: us-central1-c
 
     service-account: SERVICE_ACCOUNT_GCP
     service-account-scopes:
       - https://www.googleapis.com/auth/cloud-platform
+    gcs-bucket: SCANNER_BUCKET
 
     # --- Forseti version
     # Use either branch-name or release-version, but NOT both.
