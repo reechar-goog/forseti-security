@@ -61,6 +61,7 @@ class ScannerBuilder(object):
                     .get('module_name'))
                 try:
                     module = importlib.import_module(module_name)
+                    LOGGER.error("Loaded %s", module_name)
                 except (ImportError, TypeError, ValueError) as e:
                     LOGGER.error('Unable to import %s\n%s', module_name, e)
                     continue

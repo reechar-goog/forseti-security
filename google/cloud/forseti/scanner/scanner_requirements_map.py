@@ -18,6 +18,10 @@
 # instead of maintaining them explicitly.
 # Use the naming pattern foo_module.py, class FooModule
 REQUIREMENTS_MAP = {
+    'api':
+        {'module_name': 'api_scanner',
+         'class_name': 'APIScanner',
+         'rules_filename': 'api_rules.yaml'},
     'bigquery':
         {'module_name': 'bigquery_scanner',
          'class_name': 'BigqueryScanner',
